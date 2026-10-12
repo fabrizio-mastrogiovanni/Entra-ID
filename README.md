@@ -1,6 +1,6 @@
 # Microsoft 365 and Entra ID
 
-🎥 **[Watch the video walkthrough](VIDEO_LINK_HERE)**
+🎥 **[Watch the video walkthrough](https://www.loom.com/share/8c14c8c267a748f09fca7c83edfe360e)**
 
 ## The problem
 
