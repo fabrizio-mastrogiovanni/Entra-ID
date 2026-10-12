@@ -75,7 +75,7 @@ Terraform created:
 
 **12 things total.** Then I checked them with PowerShell to make sure they really existed.
 
-![Users created](identity/screenshots/01-users-created.png)
+<img width="2680" height="794" alt="866795B7-C4B7-4BF1-9ED4-5C96A1A97E44" src="https://github.com/user-attachments/assets/3b994de8-85fb-4cdd-be80-b5fc2ed81bbb" />
 
 **One thing I learned:** I used `for_each` instead of `count`. `count` tracks people by number (0, 1, 2). If you remove the middle one, the numbers shift and Terraform deletes people you didn't touch. `for_each` tracks them by name, so only the person you remove is affected.
 
@@ -85,15 +85,11 @@ Terraform created:
 
 **Licenses through a group.** I gave the license to the group, not to each person. Everyone in the group got it automatically.
 
-![License assigned](lifecycle/screenshots/02-license-assigned.png)
+<img width="1417" height="559" alt="F50C7D5D-73D7-44B5-978E-D76608CA301B" src="https://github.com/user-attachments/assets/52d7199e-f80a-42bb-8d34-1d0e1d115360" />
 
 **The license creates the mailbox.** Before the license, nobody had email. After it, the mailboxes appeared on their own.
 
-![Mailboxes created](lifecycle/screenshots/03-mailboxes.png)
-
 **Shared mailbox.** I made a "Finance Inbox" that Alice can open. Shared mailboxes under 50 GB need no license, which saves money.
-
-![Shared mailbox, no license](lifecycle/screenshots/04-shared-mailbox.png)
 
 **Offboarding Carol, in the right order:**
 
@@ -109,6 +105,9 @@ Terraform created:
 > **A mistake I caught:** the original plan removed Carol from groups *before* saving her mailbox. Since the license comes from the group, that would have started the delete countdown too early. I swapped the steps.
 
 The full steps are in [`lifecycle/RUNBOOK.md`](lifecycle/RUNBOOK.md).
+
+<img width="1414" height="741" alt="61FB8F26-1F6F-49C3-ABE1-A30E63A33788" src="https://github.com/user-attachments/assets/e1e9ba6e-f948-45e6-8874-437189a32f21" />
+<img width="1284" height="831" alt="0A7AEFBD-B715-4D7F-A031-29B69FEB049F" src="https://github.com/user-attachments/assets/d35b8066-2b86-4eff-96f3-890be0d47ce3" />
 
 ---
 
@@ -128,8 +127,6 @@ The full steps are in [`lifecycle/RUNBOOK.md`](lifecycle/RUNBOOK.md).
 **Results:** 5 users (the Finance Inbox counts, because every shared mailbox has a hidden user behind it). Carol shows as disabled with no license, which proves the offboarding worked.
 
 **The bug I tested on purpose.** Microsoft sends users in pages. Without `-All`, the script only reads the first page and still *looks* finished. I broke it on the `bug/pagination` branch: it reported 2 users when there were 5. A report that's missing people is worse than no report, because someone trusts it.
-
-![Pagination bug](evidence/screenshots/06-pagination-bug.png)
 
 **Control matrix.** [`evidence/CONTROL-MATRIX.md`](evidence/CONTROL-MATRIX.md) lists 10 checks. Two are **not met** yet, and I left them that way because it's true:
 - No MFA (multi-factor authentication) rule yet
