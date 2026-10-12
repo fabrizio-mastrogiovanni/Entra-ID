@@ -1,4 +1,4 @@
-# Microsoft 365 and Entra ID Labs
+# Microsoft 365 and Entra ID
 
 🎥 **[Watch the video walkthrough](VIDEO_LINK_HERE)**
 
